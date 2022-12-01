@@ -4,11 +4,11 @@ pipeline{
     maven 'Maven'
   }
   parameters{
-    choice(name: 'VERSION', choices: ['1.1.0', '1.2.0','1.3.0'])
+    choice(name: 'Build_version', choices: ['1.1.0', '1.2.0','1.3.0'])
     // booleanParam(name: 'executeTests',dafaultValue: true)
   }
   stages{
-    stage('Clone Project') {
+    stage('Checkout external proj') {
         steps {
             git branch: 'master',
                 credentialsId: 'jenkins-user-github',
@@ -28,7 +28,7 @@ pipeline{
     }
     stage("deploy"){
       steps{
-        echo "Deployed version ${params.VERSION}"
+        echo "Deployed version ${params.Build_version}"
         sh "mvn clean install"
       }
     }
