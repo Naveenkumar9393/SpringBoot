@@ -1,5 +1,5 @@
 pipeline{
-  agent {label 'devops'}
+  agent any
   tools {
     maven 'Maven'
   }
