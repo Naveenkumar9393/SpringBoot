@@ -8,7 +8,7 @@ pipeline{
     // booleanParam(name: 'executeTests',dafaultValue: true)
   }
   stages{
-    stage('Checkout external proj') {
+    stage('Clone Project') {
         steps {
             git branch: 'master',
                 credentialsId: 'jenkins-user-github',
