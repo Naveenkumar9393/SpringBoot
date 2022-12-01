@@ -8,7 +8,7 @@ pipeline{
     // booleanParam(name: 'executeTests',dafaultValue: true)
   }
   stages{
-    stage('clone repo') {
+    stage('clone repo'){
           script {
            // The below will clone your repo and will be checked out to master branch by default.
            git credentialsId: 'jenkins-user-github', url: 'https://github.com/Naveenkumar9393/SpringBoot.git'
